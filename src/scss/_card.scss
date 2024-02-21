@@ -1,0 +1,203 @@
+.card {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 1000px) {
+    position: absolute;
+    z-index: 100;
+    left: calc(50% - 255px);
+    top: calc(50% - 230px);
+  }
+
+  &__modal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 5px 30px #4c4c4c;
+    border-radius: 10px;
+    animation: showCreateCard 1s;
+
+    &.unmount {
+      opacity: 0;
+      animation: unmountCard 1s;
+    }
+  }
+
+  &__visual {
+    background: $pink;
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px 10px;
+    background: rgb(2, 2, 5);
+    background: linear-gradient(127deg, rgba(2, 2, 5, 1) 0%, rgba(97, 62, 230, 1) 47%, rgba(240, 35, 106, 1) 100%);
+    height: 20vh;
+    width: 35vh;
+    border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: calc(50% - 2vh);
+      left: 20px;
+      width: 4vh;
+      height: 3vh;
+      background: url("img/chip.png") no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__content {
+    color: #e8e8e8;
+    max-width: 200px;
+    width: 100%;
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+
+  &__name {
+    font-size: 11px;
+    text-transform: capitalize;
+  }
+
+  &__date {
+    font-size: 13px;
+  }
+
+  &__number {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 300;
+  }
+
+  &__pay {
+    width: 60px;
+    object-fit: contain;
+    transform: rotate(-90deg);
+  }
+
+  &__form {
+    background: $white;
+    border-radius: 0 0 10px 10px;
+    padding: 20px;
+  }
+}
+
+.form {
+  &__inputs {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+
+    span {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    input {
+      width: 100%;
+      border: none;
+      background: #d9d9d9;
+      padding: 5px 3px;
+      outline: none;
+      border-radius: 5px;
+      text-transform: uppercase;
+
+      &.error {
+        border: 1px solid #f1442d;
+      }
+    }
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  &__cancel {
+    color: $primary;
+    background: $white;
+    border: none;
+    box-shadow: 0 5px 10px #4c4c4c;
+    border-radius: 10px;
+    padding: 20px 5px;
+    cursor: pointer;
+    transition: opacity .3s ease-in-out, box-shadow .3s ease-in-out;
+
+    &:hover {
+      opacity: .8;
+      box-shadow: 0 5px 8px #4c4c4c;
+    }
+
+    &:active {
+      box-shadow: 0 5px 5px #4c4c4c;
+    }
+  }
+
+  &__save {
+    color: $white;
+    background: $primary;
+    border: none;
+    box-shadow: 0 5px 10px #4c4c4c;
+    border-radius: 10px;
+    padding: 20px 5px;
+    cursor: pointer;
+    transition: opacity .3s ease-in-out, box-shadow .3s ease-in-out;
+
+    &:hover {
+      opacity: .8;
+      box-shadow: 0 5px 8px #4c4c4c;
+    }
+
+    &:active {
+      box-shadow: 0 5px 5px #4c4c4c;
+    }
+  }
+}
+
+
+@keyframes showCreateCard {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes unmountCard {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+}

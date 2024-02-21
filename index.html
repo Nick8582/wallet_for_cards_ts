@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+	  <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
+	  <script>
+		  var viewport = document.createElement("meta");
+		  viewport.setAttribute("name", "viewport");
+		  if (screen.width < 540) {
+			  viewport.setAttribute("content", "width=540");
+		  } else {
+			  viewport.setAttribute("content", "width=device-width, initial-scale=1");
+		  }
+		  document.head.appendChild(viewport);
+	  </script>
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

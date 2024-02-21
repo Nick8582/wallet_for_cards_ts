@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Cards</title>
+</head>
+<body>
+<main class="main">
+	<div class="container main__container">
+		<div class="selected">
+			<h1 class="selected__title">Выберите свой способ оплаты</h1>
+			<ul class="selected__list">
+				
+				<li class="selected__item active">
+					<div class="selected__content">
+						<div class="selected__contentHead">
+							<div class="selected__imgPay">
+								<img src="img/visaBlack.svg" alt="">
+							</div>
+							<p class="selected__card">XXXX XXXX XXXX 8908</p>
+						</div>
+						<div class="selected__contentBottom">
+							<div class="selected__data">Дата</div>
+							<div class="selected__dataNumb">09/27</div>
+						</div>
+						
+						<span class="selected__check">
+						</span>
+						
+					</div>
+				</li>
+				
+				<button class="selected__item selected__addBtn">
+					<img src="img/card.svg" class="selected__addImg" alt="">
+					<div class="selected__addText">Добавть новую карту</div>
+				</button>
+			</ul>
+			<button class="selected__submit">
+				Выбрать
+			</button>
+		</div>
+		<div class="card">
+			<div class="card__modal">
+				<div class="card__visual">
+					<div class="card__block">
+						<div class="card__content">
+							<div class="card__data">
+								<div class="card__head">
+									<span class="card__name">Potapov Vladislav</span>
+									<span class="card__date">09/25</span>
+								</div>
+								<p class="card__number">0000 0000 0000 0000</p>
+							</div>
+						</div>
+						<img src="img/visa.svg" class="card__pay" alt="">
+					</div>
+				</div>
+				<div class="card__form form">
+					<form class="form__block">
+						<div class="form__inputs">
+							<label class="form__input">
+								<span>Фамилия Имя</span>
+								<input type="text">
+							</label>
+							<label class="form__input">
+								<span>Дата</span>
+								<input type="text">
+							</label>
+							<label class="form__input">
+								<span>Номер карты</span>
+								<input type="text">
+							</label>
+							<label class="form__input">
+								<span>CVV</span>
+								<input type="text">
+							</label>
+						</div>
+						<div class="form__buttons">
+							<button class="form__cancel">
+								Отмена
+							</button>
+							<button class="form__save">
+								Сохранить
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+<script type="module" src="/src/script.ts"></script>
+</body>
+</html>
